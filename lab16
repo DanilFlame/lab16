@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+//Простой класс Date
+class Date{
+    public:
+Date(int=1, int=1, int=1990); // конструктор по 
+//умолчанию
+        void print();    
+    private:
+        int month;
+        int day;
+        int year;
+};
+// Простой конструктор Date без проверки диапозона
+Date::Date(int m, int d, int y)
+    {    month = m;
+        day = d;
+        year = y;
+    }
+// Печать даты в формате mm-dd-yyyy
+void Date::print()
+    {    cout<<month<<"-"<<day<<"-"<<year;}
+
+int main() {
+Date date1(12, 2, 2002), date2;   //date2 по умолчанию 1.1.1990
+cout<<"date1 = ";
+date1.print();
+cout<<endl<<"date2 = ";
+date2.print();
+
+date2 = date1;
+cout<<endl<<endl<<"date2 = ";
+date2.print();
+return 0;}
